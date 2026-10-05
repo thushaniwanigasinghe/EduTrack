@@ -2,9 +2,7 @@ import { User } from '../models/User.js';
 import { generateToken } from '../utils/generateToken.js';
 import { ApiError } from '../utils/ApiError.js';
 
-// @desc    Auth user & get token
-// @route   POST /api/auth/login
-// @access  Public
+
 export const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
@@ -13,7 +11,7 @@ export const login = async (req, res, next) => {
       return next(new ApiError(400, 'Please provide email and password'));
     }
 
-    // Check for user (must explicitly select password since select: false in model)
+    // Check for user in the database
     const user = await User.findOne({ email: email.toLowerCase() }).select('+password');
 
     if (!user) {
@@ -44,9 +42,6 @@ export const login = async (req, res, next) => {
   }
 };
 
-// @desc    Get current logged in user
-// @route   GET /api/auth/me
-// @access  Private
 export const getMe = async (req, res, next) => {
   try {
     const user = await User.findById(req.user._id);

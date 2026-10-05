@@ -10,13 +10,13 @@ export const errorHandler = (err, req, res, next) => {
     console.error(`[Error] ${err.name || 'Error'}: ${err.message}`);
   }
 
-  // Mongoose Bad ObjectId (CastError)
+  // Mongoose Bad ObjectId 
   if (err.name === 'CastError') {
     const message = `Resource not found with id of ${err.value}`;
     error = new ApiError(404, message);
   }
 
-  // Mongoose Duplicate Key Error (code 11000)
+  // Mongoose Duplicate Key Error 
   if (err.code === 11000) {
     const field = Object.keys(err.keyValue || {})[0] || 'Field';
     const val = err.keyValue ? err.keyValue[field] : '';

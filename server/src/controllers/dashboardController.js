@@ -2,9 +2,7 @@ import { Student } from '../models/Student.js';
 import { Subject } from '../models/Subject.js';
 import { Mark } from '../models/Mark.js';
 
-// @desc    Get dashboard summary statistics
-// @route   GET /api/dashboard/summary
-// @access  Private
+
 export const getDashboardSummary = async (req, res, next) => {
   try {
     // 1. Total counts
@@ -35,7 +33,7 @@ export const getDashboardSummary = async (req, res, next) => {
         ? Math.round((markStats[0].passedMarks / markStats[0].totalMarks) * 1000) / 10
         : 0;
 
-    // 3. Subject-wise Averages (includes ALL subjects from Subject collection so newly added ones appear immediately)
+    // 3. Subject-wise Averages 
     const allSubjects = await Subject.find().sort({ name: 1 });
     const subjectAverages = await Promise.all(
       allSubjects.map(async (subj) => {

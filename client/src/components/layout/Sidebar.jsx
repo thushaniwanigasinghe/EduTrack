@@ -19,7 +19,6 @@ export const Sidebar = ({ isOpen, onClose }) => {
 
   return (
     <>
-      {/* Mobile Backdrop */}
       {isOpen && (
         <div
           className="fixed inset-0 z-40 bg-black/50 backdrop-blur-xs lg:hidden"
@@ -34,7 +33,6 @@ export const Sidebar = ({ isOpen, onClose }) => {
         }`}
       >
         <div className="flex flex-col h-full">
-          {/* Brand Header */}
           <div className="flex items-center justify-between h-16 px-6 border-b border-gray-100 dark:border-gray-700/60">
             <div className="flex items-center space-x-3">
               <div className="p-2 bg-purple-800 rounded-xl text-white shadow-xs">

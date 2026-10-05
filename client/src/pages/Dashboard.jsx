@@ -90,7 +90,7 @@ export const Dashboard = () => {
 
       {/* Main Analytics (2 Columns) */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Left Column (2/3 width): Subject Performance Bar Chart */}
+        
         <div className="lg:col-span-2 bg-white dark:bg-gray-800 p-5 rounded-xl border border-gray-200/70 dark:border-gray-700/60 shadow-xs flex flex-col justify-between">
           <div className="pb-3 border-b border-gray-100 dark:border-gray-700/60 mb-4 flex items-center justify-between">
             <div>
@@ -106,7 +106,7 @@ export const Dashboard = () => {
           <SubjectAverageChart data={summary.subjectAverages} />
         </div>
 
-        {/* Right Column (1/3 width): Grade Breakdown Donut Chart */}
+        {/* Grade Breakdown Donut Chart */}
         <div className="bg-white dark:bg-gray-800 p-5 rounded-xl border border-gray-200/70 dark:border-gray-700/60 shadow-xs flex flex-col justify-between">
           <div className="pb-3 border-b border-gray-100 dark:border-gray-700/60 mb-4">
             <h2 className="text-sm font-semibold text-gray-900 dark:text-white">

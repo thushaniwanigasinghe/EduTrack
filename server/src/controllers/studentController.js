@@ -2,9 +2,8 @@ import { Student } from '../models/Student.js';
 import { Mark } from '../models/Mark.js';
 import { ApiError } from '../utils/ApiError.js';
 
-// @desc    Get all students with search, class filter, pagination, sorting
-// @route   GET /api/students
-// @access  Private
+// Get all students with search, class filter, pagination, sorting
+
 export const getStudents = async (req, res, next) => {
   try {
     const { search, className, page = 1, limit = 10, sortBy = 'name', order = 'asc' } = req.query;
@@ -51,9 +50,8 @@ export const getStudents = async (req, res, next) => {
   }
 };
 
-// @desc    Get single student by ID with marks
-// @route   GET /api/students/:id
-// @access  Private
+// Get single student by ID with marks
+
 export const getStudentById = async (req, res, next) => {
   try {
     const student = await Student.findById(req.params.id);
@@ -75,9 +73,8 @@ export const getStudentById = async (req, res, next) => {
   }
 };
 
-// @desc    Create a new student
-// @route   POST /api/students
-// @access  Private
+// Create a new student
+
 export const createStudent = async (req, res, next) => {
   try {
     const { name, indexNo, className, email, phone } = req.body;
@@ -105,9 +102,8 @@ export const createStudent = async (req, res, next) => {
   }
 };
 
-// @desc    Update student
-// @route   PUT /api/students/:id
-// @access  Private
+// Update student
+
 export const updateStudent = async (req, res, next) => {
   try {
     const { name, indexNo, className, email, phone } = req.body;
@@ -142,9 +138,7 @@ export const updateStudent = async (req, res, next) => {
   }
 };
 
-// @desc    Delete student and cascade delete associated marks
-// @route   DELETE /api/students/:id
-// @access  Private
+// Delete student and cascade delete associated marks
 export const deleteStudent = async (req, res, next) => {
   try {
     const student = await Student.findById(req.params.id);

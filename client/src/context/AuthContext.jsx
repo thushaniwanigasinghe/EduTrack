@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
         }
       } catch (error) {
         console.error('Failed to verify token:', error);
-        logout(false); // don't trigger toast on quiet initialization check failure
+        logout(false); 
       } finally {
         setLoading(false);
       }

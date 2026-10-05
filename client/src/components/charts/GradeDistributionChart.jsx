@@ -7,11 +7,11 @@ export const GradeDistributionChart = ({ data = [] }) => {
   }
 
   const gradeColors = {
-    A: '#10b981', // Emerald 500
-    B: '#6366f1', // Indigo 500
-    C: '#f59e0b', // Amber 500
-    S: '#f97316', // Orange 500
-    F: '#ef4444', // Rose 500
+    A: '#10b981', 
+    B: '#6366f1', 
+    C: '#f59e0b', 
+    S: '#f97316', 
+    F: '#ef4444', 
   };
 
   const activeData = data.filter((item) => item.count > 0);

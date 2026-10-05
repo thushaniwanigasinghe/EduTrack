@@ -4,9 +4,7 @@ import { Subject } from '../models/Subject.js';
 import { ApiError } from '../utils/ApiError.js';
 import { calculateGrade } from '../utils/gradeCalculator.js';
 
-// @desc    Get all marks with filters and pagination
-// @route   GET /api/marks
-// @access  Private
+
 export const getMarks = async (req, res, next) => {
   try {
     const { student, subject, term, className, search, page = 1, limit = 10, sortBy = 'createdAt', order = 'desc' } = req.query;
@@ -64,9 +62,7 @@ export const getMarks = async (req, res, next) => {
   }
 };
 
-// @desc    Get single mark record
-// @route   GET /api/marks/:id
-// @access  Private
+//  Get single mark record
 export const getMarkById = async (req, res, next) => {
   try {
     const mark = await Mark.findById(req.params.id)
@@ -86,9 +82,7 @@ export const getMarkById = async (req, res, next) => {
   }
 };
 
-// @desc    Create mark entry
-// @route   POST /api/marks
-// @access  Private
+// Create mark entry
 export const createMark = async (req, res, next) => {
   try {
     const { student, subject, term, marks } = req.body;
@@ -136,9 +130,8 @@ export const createMark = async (req, res, next) => {
   }
 };
 
-// @desc    Update mark entry
-// @route   PUT /api/marks/:id
-// @access  Private
+// Update mark entry
+
 export const updateMark = async (req, res, next) => {
   try {
     const { student, subject, term, marks } = req.body;
@@ -196,9 +189,8 @@ export const updateMark = async (req, res, next) => {
   }
 };
 
-// @desc    Delete mark entry
-// @route   DELETE /api/marks/:id
-// @access  Private
+// Delete mark entry
+
 export const deleteMark = async (req, res, next) => {
   try {
     const mark = await Mark.findById(req.params.id);

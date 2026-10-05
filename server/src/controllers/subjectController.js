@@ -2,9 +2,7 @@ import { Subject } from '../models/Subject.js';
 import { Mark } from '../models/Mark.js';
 import { ApiError } from '../utils/ApiError.js';
 
-// @desc    Get all subjects
-// @route   GET /api/subjects
-// @access  Private
+// Get all subjects
 export const getSubjects = async (req, res, next) => {
   try {
     const subjects = await Subject.find().sort({ name: 1 });
@@ -30,9 +28,8 @@ export const getSubjects = async (req, res, next) => {
   }
 };
 
-// @desc    Get single subject by ID
-// @route   GET /api/subjects/:id
-// @access  Private
+// Get single subject by ID
+
 export const getSubjectById = async (req, res, next) => {
   try {
     const subject = await Subject.findById(req.params.id);
@@ -49,9 +46,7 @@ export const getSubjectById = async (req, res, next) => {
   }
 };
 
-// @desc    Create subject
-// @route   POST /api/subjects
-// @access  Private
+//Create subject
 export const createSubject = async (req, res, next) => {
   try {
     const { name, code } = req.body;
@@ -81,9 +76,7 @@ export const createSubject = async (req, res, next) => {
   }
 };
 
-// @desc    Update subject
-// @route   PUT /api/subjects/:id
-// @access  Private
+// Update subject
 export const updateSubject = async (req, res, next) => {
   try {
     const { name, code } = req.body;
@@ -122,9 +115,7 @@ export const updateSubject = async (req, res, next) => {
   }
 };
 
-// @desc    Delete subject (blocked if marks exist)
-// @route   DELETE /api/subjects/:id
-// @access  Private
+//Delete subject 
 export const deleteSubject = async (req, res, next) => {
   try {
     const subject = await Subject.findById(req.params.id);

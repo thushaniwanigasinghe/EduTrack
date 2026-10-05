@@ -46,7 +46,7 @@ export const App = () => {
           {/* Public Route */}
           <Route path="/login" element={<Login />} />
 
-          {/* Protected Routes under Main Layout */}
+          
           <Route element={<ProtectedRoute />}>
             <Route element={<Layout />}>
               <Route path="/" element={<Dashboard />} />
@@ -56,7 +56,7 @@ export const App = () => {
             </Route>
           </Route>
 
-          {/* 404 Route */}
+        
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>

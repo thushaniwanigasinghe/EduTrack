@@ -1,12 +1,4 @@
-/**
- * Calculates the letter grade based on numerical mark (0-100)
- * Grade boundaries:
- * A: 75 - 100
- * B: 65 - 74
- * C: 50 - 64
- * S: 35 - 49
- * F: 0 - 34
- */
+
 export const calculateGrade = (marks) => {
   const numericMarks = Number(marks);
   if (isNaN(numericMarks)) return 'F';
